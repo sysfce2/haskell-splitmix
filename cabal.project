@@ -1,3 +1,5 @@
 packages: .
+packages: splitmix-tests
 
 tests: True
+benchmarks: True

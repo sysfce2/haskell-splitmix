@@ -1,6 +1,6 @@
 branches: master
 docspec: True
-benchmarks: False
+install-dependencies: False
 apt: hugs libhugs-time-bundled libtestu01-0-dev
 head-hackage: False
 
