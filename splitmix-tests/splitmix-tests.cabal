@@ -23,6 +23,7 @@ tested-with:
    || ==9.8.4
    || ==9.10.2
    || ==9.12.2
+   || ==9.14.1
 
 library
   default-language: Haskell2010
@@ -42,7 +43,7 @@ benchmark comparison
   main-is:          Bench.hs
   build-depends:
     , base        <5
-    , containers  >=0.6.0.1 && <0.8
+    , containers  >=0.6.0.1 && <0.9
     , criterion   >=1.6.0.0 && <1.7
     , random
     , splitmix
@@ -82,7 +83,7 @@ test-suite splitmix-tests
 
   build-depends:
     , base                  <5
-    , containers            >=0.4.0.0 && <0.8
+    , containers            >=0.4.0.0 && <0.9
     , HUnit                 >=1.6.0.0 && <1.7
     , math-functions        >=0.3.3.0 && <0.4
     , splitmix
