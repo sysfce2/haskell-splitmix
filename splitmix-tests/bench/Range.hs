@@ -4,7 +4,6 @@
 module Main where
 
 import Data.Bits
-import Data.Bits.Compat
 import Data.List        (unfoldr)
 import Data.Word        (Word32, Word64)
 

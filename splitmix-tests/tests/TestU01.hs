@@ -3,9 +3,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module Main (main) where
 
-import Prelude ()
-import Prelude.Compat
-
 import Data.Char          (isSpace)
 import Data.IORef         (IORef, newIORef, readIORef, writeIORef)
 import Data.Maybe         (fromMaybe)

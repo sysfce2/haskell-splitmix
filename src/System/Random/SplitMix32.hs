@@ -32,7 +32,7 @@ module System.Random.SplitMix32 (
     ) where
 
 import Data.Bits             (complement, shiftL, shiftR, xor, (.&.), (.|.))
-import Data.Bits.Compat
+import Data.Bits
        (countLeadingZeros, finiteBitSize, popCount, zeroBits)
 import Data.IORef            (IORef, atomicModifyIORef, newIORef)
 import Data.Word             (Word32, Word64)

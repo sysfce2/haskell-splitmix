@@ -49,7 +49,7 @@ module System.Random.SplitMix (
     ) where
 
 import Data.Bits             (complement, shiftL, shiftR, xor, (.&.), (.|.))
-import Data.Bits.Compat      (countLeadingZeros, popCount, zeroBits)
+import Data.Bits             (countLeadingZeros, popCount, zeroBits)
 import Data.IORef            (IORef, atomicModifyIORef, newIORef)
 import Data.Word             (Word32, Word64)
 import System.IO.Unsafe      (unsafePerformIO)

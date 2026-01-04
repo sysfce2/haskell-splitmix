@@ -60,13 +60,12 @@ flag optimised-mixer
 library
   default-language: Haskell2010
   ghc-options:      -Wall
-  hs-source-dirs:   src src-compat
+  hs-source-dirs:   src
   exposed-modules:
     System.Random.SplitMix
     System.Random.SplitMix32
 
   other-modules:
-    Data.Bits.Compat
     System.Random.SplitMix.Init
 
   -- dump-core
@@ -109,131 +108,12 @@ source-repository head
   type:     git
   location: https://github.com/haskellari/splitmix.git
 
-benchmark comparison
-  type:             exitcode-stdio-1.0
-  default-language: Haskell2010
-  ghc-options:      -Wall
-  hs-source-dirs:   bench
-  main-is:          Bench.hs
-  build-depends:
-    , base
-    , containers  >=0.6.0.1 && <0.8
-    , criterion   >=1.6.0.0 && <1.7
-    , random
-    , splitmix
-    , tf-random   >=0.5     && <0.6
-
-benchmark simple-sum
-  type:             exitcode-stdio-1.0
-  default-language: Haskell2010
-  ghc-options:      -Wall
-  hs-source-dirs:   bench
-  main-is:          SimpleSum.hs
-  build-depends:
-    , base
-    , random
-    , splitmix
-
-benchmark range
-  type:             exitcode-stdio-1.0
-  default-language: Haskell2010
-  ghc-options:      -Wall
-  hs-source-dirs:   bench src-compat
-  main-is:          Range.hs
-  other-modules:    Data.Bits.Compat
-  build-depends:
-    , base
-    , random
-    , splitmix
-
-test-suite examples
+test-suite splitmix-examples
   type:             exitcode-stdio-1.0
   default-language: Haskell2010
   ghc-options:      -Wall
   hs-source-dirs:   tests
-  main-is:          Examples.hs
-  build-depends:
-    , base
-    , HUnit     >=1.6.0.0 && <1.7
-    , splitmix
-
-test-suite splitmix-tests
-  type:             exitcode-stdio-1.0
-  default-language: Haskell2010
-  ghc-options:      -Wall
-  hs-source-dirs:   tests
-  main-is:          Tests.hs
-  other-modules:
-    MiniQC
-    Uniformity
-
-  build-depends:
-    , base
-    , containers            >=0.4.0.0 && <0.8
-    , HUnit                 >=1.6.0.0 && <1.7
-    , math-functions        >=0.3.3.0 && <0.4
-    , splitmix
-    , test-framework        >=0.8.2.0 && <0.9
-    , test-framework-hunit  >=0.3.0.2 && <0.4
-
-test-suite montecarlo-pi
-  type:             exitcode-stdio-1.0
-  default-language: Haskell2010
-  ghc-options:      -Wall
-  hs-source-dirs:   tests
-  main-is:          SplitMixPi.hs
-  build-depends:
-    , base
-    , splitmix
-
-test-suite montecarlo-pi-32
-  type:             exitcode-stdio-1.0
-  default-language: Haskell2010
-  ghc-options:      -Wall
-  hs-source-dirs:   tests
-  main-is:          SplitMixPi32.hs
-  build-depends:
-    , base
-    , splitmix
-
-test-suite splitmix-dieharder
-  default-language: Haskell2010
-  type:             exitcode-stdio-1.0
-  ghc-options:      -Wall -threaded -rtsopts
-  hs-source-dirs:   tests
-  main-is:          Dieharder.hs
-  build-depends:
-    , async       >=2.2.1    && <2.3
-    , base
-    , bytestring  >=0.10.8.2 && <0.13
-    , deepseq
-    , process     >=1.6.0.0  && <1.7
-    , splitmix
-    , tf-random   >=0.5      && <0.6
-    , vector      >=0.13.0.0 && <0.14
-
-test-suite splitmix-testu01
-  if !os(linux)
-    buildable: False
-
-  default-language: Haskell2010
-  type:             exitcode-stdio-1.0
-  ghc-options:      -Wall -threaded -rtsopts
-  hs-source-dirs:   tests
-  main-is:          TestU01.hs
-  c-sources:        tests/cbits/testu01.c
-  extra-libraries:  testu01
-  build-depends:
-    , base
-    , base-compat-batteries  >=0.10.5 && <0.15
-    , splitmix
-
-test-suite initialization
-  default-language: Haskell2010
-  type:             exitcode-stdio-1.0
-  ghc-options:      -Wall -threaded -rtsopts
-  hs-source-dirs:   tests
-  main-is:          Initialization.hs
+  main-is:          splitmix-examples.hs
   build-depends:
     , base
     , HUnit     >=1.6.0.0 && <1.7
