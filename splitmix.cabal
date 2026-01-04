@@ -43,6 +43,7 @@ tested-with:
    || ==9.8.4
    || ==9.10.2
    || ==9.12.2
+   || ==9.14.1
 
 extra-doc-files:
   Changelog.md
@@ -73,7 +74,7 @@ library
   -- ghc-options: -fplugin=DumpCore -fplugin-opt DumpCore:core-html
 
   build-depends:
-    , base     >=4.12.0.0 && <4.22
+    , base     >=4.12.0.0 && <4.23
     , deepseq  >=1.4.4.0  && <1.6
 
   if flag(optimised-mixer)
